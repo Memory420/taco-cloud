@@ -5,9 +5,11 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.util.List;
+import java.util.UUID;
 
 @Data
 public class Taco {
+    private final String id = UUID.randomUUID().toString();
     @NotNull
     @Size(min = 5, message = "Name must be at least 5 characters long")
     private String name;
